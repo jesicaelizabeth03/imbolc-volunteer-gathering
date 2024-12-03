@@ -10,36 +10,45 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f4f4f4;
         }
+
         nav {
             background-color: #333;
             color: white;
             padding: 15px;
             text-align: center;
         }
+
         nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
         }
+
         .hero {
             background-color: #f4f4f4;
             padding: 100px 20px;
             text-align: center;
+            border-bottom: 1px solid #ddd;
         }
+
         .hero h1 {
             margin: 0;
             font-size: 2.5em;
             color: #333;
         }
+
         .hero p {
             color: #666;
             font-size: 1.2em;
         }
+
         .content {
             padding: 20px;
             text-align: center;
         }
+
         .content h2 {
             font-size: 2em;
             color: #333;
@@ -62,11 +71,11 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const guestName = urlParams.get('guest_name');
-
-            if (guestName) {
-                document.getElementById("greeting").innerText = `Hello ${decodeURIComponent(guestName)}, you are invited!`;
+            // Extract guest name from the URL path
+            const pathArray = window.location.pathname.split('/').filter(el => el.length > 0);
+            if (pathArray.length > 0) {
+                const guestName = decodeURIComponent(pathArray[pathArray.length - 1]);
+                document.getElementById("greeting").innerText = `Hello ${guestName}, you are invited!`;
             }
         });
     </script>
