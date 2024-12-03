@@ -33,7 +33,7 @@
             background: url('bg_phone_size.png') no-repeat center center;
             background-size: cover;
             position: relative;
-            height: 100vh; /\* Full-screen height \*/
+            height: 100vh; /\* Full screen height \*/
             text-align: center;
             border-bottom: 1px solid #ddd;
             color: white;
@@ -42,7 +42,6 @@
             justify-content: center;
             align-items: center;
             overflow: hidden; /\* Ensure background image does not cause overflow \*/
-            padding: 20px; /\* Add some padding for better appearance \*/
         }
 
         .hero::before {
@@ -54,25 +53,33 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             z-index: 0; /\* Ensure the overlay is behind the content \*/
-            pointer-events: none; /\* Prevent the overlay from blocking interactions \*/
         }
 
-        .centered-text {
+        .hero h1, .hero p, .hero .btn-rsvp {
             position: relative;
             z-index: 1; /\* Ensure the content is above the overlay \*/
-            max-width: 800px; /\* Limit the width of the text \*/
-            margin: 0 auto; /\* Center the text block \*/
-            text-align: center; /\* Center the text horizontally \*/
         }
 
         .hero h1 {
-            margin: 0 0 20px 0;
+            margin: 0;
             font-size: 2.5em;
         }
 
         .hero p {
             font-size: 1.2em;
-            margin: 0 0 20px 0;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #333;
         }
 
         .btn-rsvp {
@@ -94,15 +101,13 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
-                margin: 0 0 15px 0;
             }
 
             .hero p {
                 font-size: 1em;
-                margin: 0 0 15px 0;
             }
 
-            .centered-text {
+            .content h2 {
                 font-size: 1.5em;
             }
         }
@@ -110,15 +115,13 @@
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.5em;
-                margin: 0 0 10px 0;
             }
 
             .hero p {
                 font-size: 0.9em;
-                margin: 0 0 10px 0;
             }
 
-            .centered-text {
+            .content h2 {
                 font-size: 1.2em;
             }
 
@@ -130,24 +133,19 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
     <div class="hero">
-        <div class="centered-text">
-            <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
-            <p>We're excited to have you here.</p>
-            <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
-        </div>
+        <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
+        <p>We're excited to have you here.</p>
+         <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('guest_name');
             if (guestName) {
                 document.getElementById("greeting_header").innerText = `Hello ${decodeURIComponent(guestName)}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
+            }
         });
     </script>
 </body>
