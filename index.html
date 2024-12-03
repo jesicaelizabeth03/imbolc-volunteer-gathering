@@ -101,22 +101,6 @@
             background-color: #0056b3;
         }
 
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            padding: 20px;
-            width: calc(100% - 40px);
-            box-sizing: border-box;
-        }
-
-        .photo-grid img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 5px;
-        }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
@@ -160,13 +144,6 @@
         <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
         <p>We're excited to have you here.</p>
         <a href="rsvp.html" class="btn-rsvp" id="rsvp-button" data-aos="fade-in">RSVP</a>
-    </div>
-
-    <div class="photo-grid">
-        <img src="photo1.jpg" alt="Photo 1" data-aos="fade-in">
-        <img src="photo2.jpg" alt="Photo 2" data-aos="fade-in" data-aos-delay="200">
-        <img src="photo3.jpg" alt="Photo 3" data-aos="fade-in" data-aos-delay="400">
-        <img src="photo4.jpg" alt="Photo 4" data-aos="fade-in" data-aos-delay="600">
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GA39CqysK2R7X62oeQubNC7s09Er8VyFk3VS0RxoupHibBLxFL/kwY4ScdmKzNaMgiUEQXf+Ag9lrh0YB28ssw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
