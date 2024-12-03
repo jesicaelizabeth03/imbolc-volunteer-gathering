@@ -16,11 +16,24 @@
             flex-direction: column;
         }
 
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
         .hero {
             background: url('bg_phone_size.png') no-repeat center center;
             background-size: cover;
             position: relative;
-            height: 100vh; /\* Full screen height \*/
+            height: 100vh; /\* Full-screen height \*/
             text-align: center;
             border-bottom: 1px solid #ddd;
             color: white;
@@ -41,10 +54,12 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
             z-index: 0; /\* Ensure the overlay is behind the content \*/
+            pointer-events: none; /\* Prevent the overlay from blocking interactions \*/
         }
 
         .centered-text {
             position: relative;
+            z-index: 1; /\* Ensure the content is above the overlay \*/
             max-width: 800px; /\* Limit the width of the text \*/
             margin: 0 auto; /\* Center the text block \*/
             text-align: center; /\* Center the text horizontally \*/
@@ -115,10 +130,17 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
     <div class="hero">
-        <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
-        <p>We're excited to have you here.</p>
-        <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
+        <div class="centered-text">
+            <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
+            <p>We're excited to have you here.</p>
+            <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
