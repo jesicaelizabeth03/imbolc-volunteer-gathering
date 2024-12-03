@@ -52,6 +52,32 @@
             font-size: 2em;
             color: #333;
         }
+        .form-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /\* Aspect ratio for 16:9 \*/
+            height: 0;
+            overflow: hidden;
+        }
+
+        .form-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -66,7 +92,9 @@
     </div>
     <div class="content">
         <h2 id="rsvp"> RSVP Here! </h2>
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6LvjgRRTDFGhzk5P6GIiCAtGSscWZRXFYESbFm4op8NBvmA/viewform?embedded=true" width="640" height="1266" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6LvjgRRTDFGhzk5P6GIiCAtGSscWZRXFYESbFm4op8NBvmA/viewform?embedded=true" width="640" height="1266" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
     </div>
 
     <script>
