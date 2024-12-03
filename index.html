@@ -27,7 +27,7 @@
         }
 
         .hero {
-            background: url('BG2.png') no-repeat center center/cover;
+            background: url('1.png') no-repeat center center/cover;
             padding: 100px 20px;
             text-align: center;
             border-bottom: 1px solid #ddd;
@@ -65,7 +65,7 @@
         <p>We're excited to have you here.</p>
     </div>
     <div class="content">
-        <h2 id="greeting">Hello, you are invited!</h2>
+        <h2 id="greeting">Click Here to RSVP!</h2>
     </div>
 
     <script>
@@ -73,7 +73,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('guest_name');
             if (guestName) {
-                document.getElementById("greeting_header").innerText = `Hello ${decodeURIComponent(guestName)}, you are invited!`;
+                document.getElementById("greeting_header").innerText = `Hello ${decodeURIComponent(guestName)}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
             }
         });
     </script>
