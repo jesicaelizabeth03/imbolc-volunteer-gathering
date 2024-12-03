@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christmas Volunteer Gathering 聖誕節志工集會</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HoTCmDlcGb9DP6IkLPLby/fAWJaIyOJt0mo8D9w8QE/skZ2MFogFIrVVe7Wrj+sEVhFlIC02yGYnxiT1zHibGw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,7 +12,6 @@
             padding: 0;
             box-sizing: border-box;
             background-color: #f4f4f4;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             text-align: center;
@@ -35,7 +35,7 @@
             background: url('bg_with_text.png') no-repeat center center;
             background-size: cover;
             position: relative;
-            height: 100vh; /\* Full screen height \*/
+            height: 100vh;
             text-align: center;
             border-bottom: 1px solid #ddd;
             color: white;
@@ -43,7 +43,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /\* Ensure background image does not cause overflow \*/
+            overflow: hidden;
         }
 
         .hero::before {
@@ -54,12 +54,14 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            z-index: 0; /\* Ensure the overlay is behind the content \*/
+            z-index: 0;
         }
 
-        .hero h1, .hero p, .hero .btn-rsvp {
+        .hero h1,
+        .hero p,
+        .hero .btn-rsvp {
             position: relative;
-            z-index: 1; /\* Ensure the content is above the overlay \*/
+            z-index: 1;
         }
 
         .hero h1 {
@@ -72,7 +74,6 @@
         }
 
         .content {
-            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -92,12 +93,28 @@
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            cursor: pointer; /\* Ensure the cursor changes to a pointer on hover \*/
-            display: inline-block; /\* Ensure correct button styling \*/
+            cursor: pointer;
+            display: inline-block;
         }
 
         .btn-rsvp:hover {
             background-color: #0056b3;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 20px;
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
         }
 
         @media (max-width: 768px) {
@@ -131,6 +148,10 @@
                 font-size: 0.9em;
                 padding: 8px 16px;
             }
+
+            .photo-grid img {
+                border-radius: 5px;
+            }
         }
     </style>
 </head>
@@ -138,11 +159,22 @@
     <div class="hero">
         <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
         <p>We're excited to have you here.</p>
-         <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
+        <a href="rsvp.html" class="btn-rsvp" id="rsvp-button" data-aos="fade-in">RSVP</a>
     </div>
 
+    <div class="photo-grid">
+        <img src="photo1.jpg" alt="Photo 1" data-aos="fade-in">
+        <img src="photo2.jpg" alt="Photo 2" data-aos="fade-in" data-aos-delay="200">
+        <img src="photo3.jpg" alt="Photo 3" data-aos="fade-in" data-aos-delay="400">
+        <img src="photo4.jpg" alt="Photo 4" data-aos="fade-in" data-aos-delay="600">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-GA39CqysK2R7X62oeQubNC7s09Er8VyFk3VS0RxoupHibBLxFL/kwY4ScdmKzNaMgiUEQXf+Ag9lrh0YB28ssw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        AOS.init();
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('guest_name');
             if (guestName) {
