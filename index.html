@@ -61,16 +61,7 @@
         <a href="#">Contact</a>
     </nav>
     <div class="hero">
-      <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const guestName = urlParams.get('guest_name');
-                if (guestName) {
-                    document.getElementById("greeting").innerText = `Hello ${decodeURIComponent(guestName)}!`;
-                }
-            });
-        </script>
-        <h1>You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
+        <h1 id=greeting_header>You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
         <p>We're excited to have you here.</p>
     </div>
     <div class="content">
@@ -82,7 +73,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('guest_name');
             if (guestName) {
-                document.getElementById("greeting").innerText = `Hello ${decodeURIComponent(guestName)}, you are invited!`;
+                document.getElementById("greeting1").innerText = `Hello ${decodeURIComponent(guestName)}, you are invited!`;
             }
         });
     </script>
