@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSVP Page</title>
     <style>
+        \* {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
             background-color: #f4f4f4;
         }
 
@@ -35,14 +38,13 @@
 
         .content h2 {
             font-size: 2em;
-            color: #333;
+            color: white; /\* Changed to white \*/
         }
 
         .form-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /\* Aspect ratio for 16:9 \*/
-            height: 0;
+            padding-top: 56.25%; /\* Aspect ratio for 16:9 \*/
             overflow: hidden;
         }
 
@@ -56,12 +58,20 @@
         }
 
         @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
             .content h2 {
                 font-size: 1.5em;
             }
         }
 
         @media (max-width: 480px) {
+            .content {
+                padding: 5px;
+            }
+
             .content h2 {
                 font-size: 1.2em;
             }
@@ -69,11 +79,16 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
     <div class="content">
         <h2>Please RSVP</h2>
         <div class="form-container">
             <!-- Google Form Embed Code -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6LvjgRRTDFGhzk5P6GIiCAtGSscWZRXFYESbFm4op8NBvmA/viewform?embedded=true" width="640" height="1266" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6LvjgRRTDFGhzk5P6GIiCAtGSscWZRXFYESbFm4op8NBvmA/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
     </div>
 </body>
