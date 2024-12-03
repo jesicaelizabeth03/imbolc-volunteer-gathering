@@ -27,7 +27,7 @@
         }
 
         .hero {
-            background: url('BG.png') no-repeat center center/cover;
+            background: url('BG2.png') no-repeat center center/cover;
             padding: 100px 20px;
             text-align: center;
             border-bottom: 1px solid #ddd;
@@ -61,7 +61,16 @@
         <a href="#">Contact</a>
     </nav>
     <div class="hero">
-        <h1>Welcome to Our Event!</h1>
+      <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const guestName = urlParams.get('guest_name');
+                if (guestName) {
+                    document.getElementById("greeting").innerText = `Hello ${decodeURIComponent(guestName)}!`;
+                }
+            });
+        </script>
+        <h1>You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
         <p>We're excited to have you here.</p>
     </div>
     <div class="content">
