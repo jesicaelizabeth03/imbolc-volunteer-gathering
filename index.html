@@ -133,18 +133,23 @@
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
     <div class="hero">
         <h1 id="greeting_header">You are Invited to IMBOLC Christmas Volunteer Gathering!</h1>
         <p>We're excited to have you here.</p>
-         <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
+        <a href="rsvp.html" class="btn-rsvp" id="rsvp-button">RSVP</a>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('guest_name');
+            const greetingHeader = document.getElementById("greeting_header");
             if (guestName) {
-                document.getElementById("greeting_header").innerText = `Hello ${decodeURIComponent(guestName)}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
+                greetingHeader.innerText = `Hello ${decodeURIComponent(guestName)}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
             }
         });
     </script>
