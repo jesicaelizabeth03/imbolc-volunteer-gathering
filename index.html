@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,10 +31,15 @@
             background: url('path/to/your/image.jpg') no-repeat center center;
             background-size: cover;
             position: relative;
-            padding: 100px 20px;
+            height: 100vh; /\* Full screen height \*/
             text-align: center;
             border-bottom: 1px solid #ddd;
             color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /\* Ensure background image does not cause overflow \*/
         }
 
         .hero::before {
@@ -88,11 +94,6 @@
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 50px 20px;
-                background-size: cover;
-            }
-
             .hero h1 {
                 font-size: 2em;
             }
@@ -107,11 +108,6 @@
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 30px 15px;
-                background-size: cover;
-            }
-
             .hero h1 {
                 font-size: 1.5em;
             }
