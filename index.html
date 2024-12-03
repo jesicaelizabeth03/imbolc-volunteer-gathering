@@ -34,7 +34,7 @@
             background-size: cover;
             position: relative;
             height: 100vh; /\* Full screen height \*/
-            text-align: center;
+            text-align: center; /\* Center text horizontally \*/
             border-bottom: 1px solid #ddd;
             color: white;
             display: flex;
@@ -42,6 +42,7 @@
             justify-content: center;
             align-items: center;
             overflow: hidden; /\* Ensure background image does not cause overflow \*/
+            padding: 20px; /\* Add some padding for better appearance \*/
         }
 
         .hero::before {
@@ -58,15 +59,18 @@
         .hero h1, .hero p, .hero .btn-rsvp {
             position: relative;
             z-index: 1; /\* Ensure the content is above the overlay \*/
+            max-width: 800px; /\* Limit the width of the text \*/
+            margin: 0 auto; /\* Center the text block \*/
         }
 
         .hero h1 {
-            margin: 0;
+            margin: 0 0 20px 0;
             font-size: 2.5em;
         }
 
         .hero p {
             font-size: 1.2em;
+            margin: 0 0 20px 0;
         }
 
         .content {
@@ -101,10 +105,12 @@
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2em;
+                margin: 0 0 15px 0;
             }
 
             .hero p {
                 font-size: 1em;
+                margin: 0 0 15px 0;
             }
 
             .content h2 {
@@ -115,10 +121,12 @@
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.5em;
+                margin: 0 0 10px 0;
             }
 
             .hero p {
                 font-size: 0.9em;
+                margin: 0 0 10px 0;
             }
 
             .content h2 {
