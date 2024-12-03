@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSVP Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        .form-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /\* Aspect ratio for 16:9 \*/
+            height: 0;
+            overflow: hidden;
+        }
+
+        .form-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .content h2 {
+                font-size: 1.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>Please RSVP</h2>
+        <div class="form-container">
+            <!-- Google Form Embed Code -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe6LvjgRRTDFGhzk5P6GIiCAtGSscWZRXFYESbFm4op8NBvmA/viewform?embedded=true" width="640" height="1266" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </div>
+</body>
+</html>
