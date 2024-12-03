@@ -21,7 +21,7 @@
         }
 
         nav a {
-            color: white;
+            color: black;
             text-decoration: none;
             margin: 0 15px;
         }
@@ -70,11 +70,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Extract guest name from the URL path
-            const pathArray = window.location.pathname.split('/').filter(el => el.length > 0);
-            if (pathArray.length > 0) {
-                const guestName = decodeURIComponent(pathArray[pathArray.length - 1]);
-                document.getElementById("greeting").innerText = `Hello ${guestName}, you are invited!`;
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('guest_name');
+            if (guestName) {
+                document.getElementById("greeting").innerText = `Hello ${decodeURIComponent(guestName)}, you are invited!`;
             }
         });
     </script>
