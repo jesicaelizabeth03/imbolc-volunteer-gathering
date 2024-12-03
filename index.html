@@ -146,10 +146,8 @@
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
             const guestName = urlParams.get('guest_name');
-            const greetingHeader = document.getElementById("greeting_header");
             if (guestName) {
-                greetingHeader.innerText = `Hello ${decodeURIComponent(guestName)}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
-            }
+                document.getElementById("greeting_header").innerText = `Hello ${decodeURIComponent(guestName)}, You are Invited to IMBOLC Christmas Volunteer Gathering!!`;
         });
     </script>
 </body>
